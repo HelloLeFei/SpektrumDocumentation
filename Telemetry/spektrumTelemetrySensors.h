@@ -35,13 +35,17 @@
 #define	TELE_DEVICE_RSV_06			(0x06)										// Reserved
 #define	TELE_DEVICE_RSV_07			(0x07)										// Reserved
 #define	TELE_DEVICE_RSV_08			(0x08)										// Reserved
-#define	TELE_DEVICE_RSV_09			(0x09)										// Reserved
+//#define	DO_NOT_USE				(0x09)										// DO NOT USE!
 #define	TELE_DEVICE_PBOX			(0x0A)										// PowerBox
 #define	TELE_DEVICE_LAPTIMER		(0x0B)										// Lap Timer
 #define	TELE_DEVICE_TEXTGEN			(0x0C)										// Text Generator
 #define	TELE_DEVICE_VTX				(0x0D)										// Video Transmitter Feedback
+#define	TELE_DEVICE_RSV_0E			(0x0E)										// Reserved
+#define	TELE_DEVICE_RSV_0F			(0x0F)										// Reserved
+#define	TELE_DEVICE_RSV_10			(0x10)										// Reserved
 #define	TELE_DEVICE_AIRSPEED		(0x11)										// Air Speed (Eagle Tree Sensor)
 #define	TELE_DEVICE_ALTITUDE		(0x12)										// Altitude (Eagle Tree Sensor)
+#define	TELE_DEVICE_RSV_13			(0x13)										// Reserved
 #define	TELE_DEVICE_GMETER			(0x14)										// G-Force (Eagle Tree Sensor)
 #define	TELE_DEVICE_JETCAT			(0x15)										// Turbine interface (Eagle Tree)
 #define	TELE_DEVICE_GPS_LOC			(0x16)										// GPS Location Data (Eagle Tree)
@@ -50,23 +54,73 @@
 #define	TELE_DEVICE_JETCAT_2		(0x19)										// Turbine interface, message 2 format (Eagle Tree)
 #define	TELE_DEVICE_GYRO			(0x1A)										// 3-axis gyro
 #define	TELE_DEVICE_ATTMAG			(0x1B)										// Attitude and Magnetic Compass
+#define	TELE_DEVICE_TILT			(0x1C)										// Surface Tilt Sensor
+#define	TELE_DEVICE_RSV_1D			(0x1D)										// Reserved
+#define	TELE_DEVICE_AS6X_GAIN		(0x1E)										// Active AS6X Gains (new mode)
 #define	TELE_DEVICE_AS3X_LEGACYGAIN	(0x1F)										// Active AS3X Gains for legacy mode
 #define	TELE_DEVICE_ESC				(0x20)										// Electronic Speed Control
+#define	TELE_DEVICE_RSV_21			(0x21)										// Reserved
 #define	TELE_DEVICE_FUEL			(0x22)										// Fuel Flow Meter
+#define	TELE_DEVICE_RSV_23			(0x23)										// Reserved
 #define	TELE_DEVICE_ALPHA6			(0x24)										// Alpha6 Stabilizer
+#define	TELE_DEVICE_RSV_25			(0x25)										// Reserved
 #define	TELE_DEVICE_GPS_BINARY		(0x26)										// GPS, binary format
-//	DO NOT USE						(0x30)										// Reserved for internal use
-//	DO NOT USE						(0x32)										// Reserved for internal use
+#define	TELE_DEVICE_RSV_27			(0x27)										// Reserved
+#define	TELE_DEVICE_RSV_28			(0x28)										// Reserved
+#define	TELE_DEVICE_RSV_29			(0x29)										// Reserved
+#define	TELE_DEVICE_RSV_2A			(0x2A)										// Reserved
+#define	TELE_DEVICE_RSV_2B			(0x2B)										// Reserved
+#define	TELE_DEVICE_RSV_2C			(0x2C)										// Reserved
+#define	TELE_DEVICE_RSV_2D			(0x2D)										// Reserved
+#define	TELE_DEVICE_RSV_2E			(0x2E)										// Reserved
+#define	TELE_DEVICE_RSV_2F			(0x2F)										// Reserved
+//#define	DO_NOT_USE				(0x30)										// Internal ST sensor
+//#define	DO_NOT_USE				(0x32)										// Internal ST sensor
+#define	TELE_DEVICE_RSV_33			(0x33)										// Reserved
 #define	TELE_DEVICE_FP_MAH			(0x34)										// Flight Battery Capacity (Dual)
+#define	TELE_DEVICE_RSV_35			(0x35)										// Reserved
 #define	TELE_DEVICE_DIGITAL_AIR		(0x36)										// Digital Inputs & Tank Pressure
+#define	TELE_DEVICE_RSV_37			(0x37)										// Reserved
 #define	TELE_DEVICE_STRAIN			(0x38)										// Thrust/Strain Gauge
+#define	TELE_DEVICE_RSV_39			(0x39)										// Reserved
 #define	TELE_DEVICE_LIPOMON			(0x3A)										// 6S Cell Monitor (LiPo taps)
+#define	TELE_DEVICE_RSV_3B			(0x3B)										// Reserved
+#define	TELE_DEVICE_RSV_3C			(0x3C)										// Reserved
+#define	TELE_DEVICE_RSV_3D			(0x3D)										// Reserved
+#define	TELE_DEVICE_RSV_3E			(0x3E)										// Reserved
 #define	TELE_DEVICE_LIPOMON_14		(0x3F)										// 14S Cell Monitor (LiPo taps)
 #define	TELE_DEVICE_VARIO_S			(0x40)										// Vario
+#define	TELE_DEVICE_RSV_41			(0x41)										// Reserved
+#define	TELE_DEVICE_SMARTBATT		(0x42)										// Spektrum SMART Battery (multiple structs)
+#define	TELE_DEVICE_RSV_43			(0x43)										// Reserved
+#define	TELE_DEVICE_RSV_44			(0x44)										// Reserved
+#define	TELE_DEVICE_RSV_45			(0x45)										// Reserved
+#define	TELE_DEVICE_RSV_46			(0x46)										// Reserved
+#define	TELE_DEVICE_RSV_47			(0x47)										// Reserved
+#define	TELE_DEVICE_RSV_48			(0x48)										// Reserved
+#define	TELE_DEVICE_RSV_49			(0x49)										// Reserved
+#define	TELE_DEVICE_RSV_4A			(0x4A)										// Reserved
+#define	TELE_DEVICE_RSV_4B			(0x4B)										// Reserved
+#define	TELE_DEVICE_RSV_4C			(0x4C)										// Reserved
+#define	TELE_DEVICE_RSV_4D			(0x4D)										// Reserved
+#define	TELE_DEVICE_RSV_4E			(0x4E)										// Reserved
+#define	TELE_DEVICE_RSV_4F			(0x4F)										// Reserved
 #define	TELE_DEVICE_USER_16SU		(0x50)										// User-Defined, STRU_TELE_USER_16SU
+#define	TELE_DEVICE_RSV_51			(0x51)										// Reserved
 #define	TELE_DEVICE_USER_16SU32U	(0x52)										// User-Defined, STRU_TELE_USER_16SU32U
+#define	TELE_DEVICE_RSV_53			(0x53)										// Reserved
 #define	TELE_DEVICE_USER_16SU32S	(0x54)										// User-Defined, STRU_TELE_USER_16SU32S
+#define	TELE_DEVICE_RSV_55			(0x55)										// Reserved
 #define	TELE_DEVICE_USER_16U32SU	(0x56)										// User-Defined, STRU_TELE_USER_16U32SU
+#define	TELE_DEVICE_RSV_57			(0x57)										// Reserved
+#define	TELE_DEVICE_RSV_58			(0x58)										// Reserved
+#define	TELE_DEVICE_RSV_59			(0x59)										// Reserved
+#define	TELE_DEVICE_RSV_5A			(0x5A)										// Reserved
+#define	TELE_DEVICE_RSV_5B			(0x5B)										// Reserved
+#define	TELE_DEVICE_RSV_5C			(0x5C)										// Reserved
+#define	TELE_DEVICE_RSV_5D			(0x5D)										// Reserved
+#define	TELE_DEVICE_RSV_5E			(0x5E)										// Reserved
+#define	TELE_DEVICE_RSV_5F			(0x5F)										// Reserved
 #define	TELE_DEVICE_VSPEAK			(0x60)										// Reserved for V-Speak
 #define	TELE_DEVICE_SMOKE_EL		(0x61)										// Reserved for Smoke-EL.de
 #define	TELE_DEVICE_CROSSFIRE		(0x62)										// Reserved for Crossfire devices
@@ -78,7 +132,7 @@
 #define	TELE_DEVICE_RSV_68			(0x68)										// Reserved
 #define	TELE_DEVICE_RSV_69			(0x69)										// Reserved
 #define	TELE_DEVICE_RSV_6A			(0x6A)										// Reserved
-#define	TELE_DEVICE_RSV_6B			(0x6B)										// Reserved
+//#define	DO_NOT_USE				(0x6B)										// DO NOT USE!
 #define	TELE_DEVICE_RSV_6C			(0x6C)										// Reserved
 #define	TELE_DEVICE_RSV_6D			(0x6D)										// Reserved
 #define	TELE_DEVICE_RSV_6E			(0x6E)										// Reserved
@@ -101,7 +155,7 @@
 #define	TELE_DEVICE_QOS				(0x7F)										// RxV + flight log data
 #define	TELE_DEVICE_MAX				(0x7F)										// Last address available
 
-#define	TELE_DEVICE_SHORTRANGE		(0x80)										// Data is from a TM1100
+#define	TELE_DEVICE_SHORTRANGE		(0x80)										// OR this bit to indicate data is from a short-range telemetry device (e.g. TM1100)
 
 #define	TELE_DEVICE_MAX_PROGRAM		(0x70)										// Last programmable address when using sID
 
@@ -388,13 +442,15 @@ typedef struct
 //
 //////////////////////////////////////////////////////////////////////////////
 //
+//	Uses big-endian byte order
+//
 typedef struct
 {
 	UINT8		identifier;														// Source device = 0x20
 	UINT8		sID;															// Secondary ID
-	UINT16		RPM;															// RPM, 10RPM (0-655340 RPM)      0xFFFF --> "No data"
+	UINT16		RPM;															// Electrical RPM, 10RPM (0-655340 RPM)      0xFFFF --> "No data"
 	UINT16		voltsInput;														// Volts, 0.01v (0-655.34V)       0xFFFF --> "No data"
-	UINT16		tempFET;														// Temperature, 0.01C (0-655.34C) 0xFFFF --> "No data"
+	UINT16		tempFET;														// Temperature, 0.1C (0-6553.4C)  0xFFFF --> "No data"
 	UINT16		currentMotor;													// Current, 10mA (0-655.34A)      0xFFFF --> "No data"
 	UINT16		tempBEC;														// Temperature, 0.1C (0-6553.4C)  0xFFFF --> "No data"
 	UINT8		currentBEC;														// BEC Current, 100mA (0-25.4A)   0xFF ----> "No data"
@@ -434,11 +490,11 @@ typedef struct
 {
 	UINT8		identifier;														// Source device = 0x34
 	UINT8		sID;															// Secondary ID
-	INT16		current_A;														// Instantaneous current, 0.1A (0-3276.8A)
-	INT16		chargeUsed_A;													// Integrated mAh used, 1mAh (0-32.768Ah)
+	INT16		current_A;														// Instantaneous current, 0.1A (0-3276.6A)
+	INT16		chargeUsed_A;													// Integrated mAh used, 1mAh (0-32.766Ah)
 	UINT16		temp_A;															// Temperature, 0.1C (0-150C, 0x7FFF indicates not populated)
-	INT16		current_B;														// Instantaneous current, 0.1A (0-3276.8A)
-	INT16		chargeUsed_B;													// Integrated mAh used, 1mAh (0-32.768Ah)
+	INT16		current_B;														// Instantaneous current, 0.1A (0-3276.6A)
+	INT16		chargeUsed_B;													// Integrated mAh used, 1mAh (0-32.766Ah)
 	UINT16		temp_B;															// Temperature, 0.1C (0-150C, 0x7FFF indicates not populated)
 	UINT16		spare;															// Not used
 } STRU_TELE_FP_MAH;
@@ -505,6 +561,88 @@ typedef struct
 
 //////////////////////////////////////////////////////////////////////////////
 //
+//								Smart Battery
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//			Uses little-endian byte order for all multi-byte fields
+//
+typedef struct
+{
+	UINT8	identifier;															// Source device = 0x42
+	UINT8	sID;																// Secondary ID
+	UINT8	typeChannel;														// Upper nybble = Message type; Lower nybble = Battery number (0 or 1)
+	UINT8	msgData[13];														// Message-specific data, determined by upper nybble of typeChannel (see defs below)
+} STRU_SMARTBATT_HEADER;
+
+#define	SMARTBATT_MSG_TYPE_MASK_BATTNUMBER		(0x0F)
+#define	SMARTBATT_MSG_TYPE_MASK_MSGTYPE			(0xF0)
+#define SMARTBATT_MSG_TYPE_REALTIME				(0x00)
+#define SMARTBATT_MSG_TYPE_CELLS_1_6			(0x10)
+#define SMARTBATT_MSG_TYPE_CELLS_7_12			(0x20)
+#define SMARTBATT_MSG_TYPE_CELLS_13_18			(0x30)
+#define SMARTBATT_MSG_TYPE_ID					(0x80)
+#define SMARTBATT_MSG_TYPE_LIMITS				(0x90)
+
+//...........................................................................
+// Real-time battery data when current sense is available
+typedef struct
+{
+	UINT8		identifier;														// Source device = 0x42
+	UINT8		sID;															// Secondary ID
+	UINT8		typeChannel;													// Msg type = SMARTBATT_MSG_TYPE_REALTIME | Battery number (0 or 1)
+	INT8		temperature_C;													// Temperature in degrees C, 1 degree increments (-128 = unavailable)
+	UINT32		dischargeCurrent_mA;											// Amount of current being drawn from battery, in mA steps (0xFFFFFFFF = unavailable)
+	UINT16		batteryCapacityUsage_mAh;										// Approximate battery capacity usage, in mAh (0xFFFF = unavailable)
+	UINT16		minCellVoltage_mV;												// Minimum cell voltage of pack, in mV
+	UINT16		maxCellVoltage_mV;												// Maximum cell voltage of pack, in mV
+	UINT8		rfu[2];									// TODO: Make this a Status field, maybe with error bits?
+} STRU_SMARTBATT_REALTIME;
+
+//...........................................................................
+// Real-time cell voltage
+typedef struct
+{
+	UINT8		identifier;														// Source device = 0x42
+	UINT8		sID;															// Secondary ID
+	UINT8		typeChannel;													// Msg type = SMARTBATT_MSG_TYPE_CELLS_X_Y | Battery number (0 or 1)
+	INT8		temperature_C;													// Temperature in degrees C, 1 degree increments (-128 = unavailable)
+	UINT16		cellVoltage_mV[6];												// Cell voltage of first 6 cells, in mV (0xFFFF = unavailable)
+} STRU_SMARTBATT_CELLS;
+
+//...........................................................................
+// Smart Battery ID and general info
+typedef struct
+{
+	UINT8		identifier;														// Source device = 0x42
+	UINT8		sID;															// Secondary ID
+	UINT8		typeChannel;													// Msg type = SMARTBATT_MSG_TYPE_ID | Battery number (0 or 1)
+	UINT8		chemistry;														// 0:LiHv, 1:LiPo, 2:LiIon, 3:LiFe, 4:Pb, 5:Ni-MH/Cd
+	UINT8		numOfCells;														// Number of cells in the battery
+	UINT8		manufacturer;													// 0:BattGo
+	UINT16		cycles;															// Number of charge/discharge cycles recorded (0 = unavailable)
+	UINT8		uniqueID[8];													// Unique battery ID, manufacturer-specific
+} STRU_SMARTBATT_ID;
+
+//...........................................................................
+// Smart Battery Limits
+typedef struct
+{
+	UINT8		identifier;														// Source device = 0x42
+	UINT8		sID;															// Secondary ID
+	UINT8		typeChannel;													// Msg type = SMARTBATT_MSG_TYPE_LIMITS | Battery number (0 or 1)
+	UINT8		rfu;										 // TODO: What other battery limit could we put here? Maybe one that BattGo doesn't have, but future batteries might?
+	UINT16		fullCapacity_mAh;												// Fully charged battery capacity, in mAh
+	UINT16		dischargeCurrentRating;											// Rated discharge current, in 0.1C
+	UINT16		overDischarge_mV;												// Limit below which battery is likely damaged, in mV
+	UINT16		zeroCapacity_mV;												// Voltage at which LVC protection should activate, in mV
+	UINT16		fullyCharged_mV;												// Voltage reading expected when fully charged, in mV
+	INT8		minWorkingTemp;													// Minimum working temperature in degrees C, 1 degree steps
+	INT8		maxWorkingTemp;													// Maximum working temperature in degrees C, 1 degree steps
+} STRU_SMARTBATT_LIMITS;
+
+//////////////////////////////////////////////////////////////////////////////
+//
 //							ACCELEROMETER
 //
 //////////////////////////////////////////////////////////////////////////////
@@ -524,6 +662,23 @@ typedef struct
 
 //////////////////////////////////////////////////////////////////////////////
 //
+//						SURFACE TILT (ATTITUDE) SENSOR
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+typedef struct
+{
+	UINT8		identifier;														// Source device = 0x1C TELE_DEVICE_TILT
+	UINT8		sID;															// Secondary ID
+	INT16		attQuatX;														// Quaternion representing attitude using RHR. X component in Q14.
+	INT16		attQuatY;														// Y component in Q14.
+	INT16		attQuatZ;														// Z component in Q14.
+	INT16		attQuatW;														// W component in Q14.
+	UINT16		spare[3];
+} STRU_TELE_TILT;
+
+//////////////////////////////////////////////////////////////////////////////
+//
 //								TURBINE
 //
 //////////////////////////////////////////////////////////////////////////////
@@ -540,7 +695,7 @@ typedef struct
 	UINT16		EGT;															// (BCD) Temperature, Celsius
 	UINT8		offCondition;													// Table below
 	UINT8		spare;
-} STRU_TELE_JETCAT;	
+} STRU_TELE_JETCAT;
 
 enum JETCAT_ECU_TURBINE_STATE {							// ECU Status definitions
 		JETCAT_ECU_STATE_OFF = 0x00,
@@ -809,8 +964,33 @@ typedef struct
 	UINT8		activeRoll;														// Active gains per axis (as affected by FM channel)
 	UINT8		activePitch;
 	UINT8		activeYaw;
-	UINT8		unused[5];
+	UINT8		flightMode;														// bit 7 1 --> FM present in bits 0,1 except 0xFF --> not present
+	UINT8		unused[4];
 } STRU_TELE_AS3X_LEGACY;
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//					AS6X Gain Report (AS3X Legacy + more fields)
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+typedef struct
+{
+	UINT8		identifier;														// Source device = TELE_DEVICE_AS6X_GAIN
+	UINT8		sID;															// Secondary ID
+	UINT8		gainRoll;														// Configured normal gains per axis
+	UINT8		gainPitch;
+	UINT8		gainYaw;
+	UINT8		headRoll;														// Configured heading hold gains per axis
+	UINT8		headPitch;
+	UINT8		headYaw;
+	UINT8		activeRoll;														// Active gains per axis (as affected by FM channel)
+	UINT8		activePitch;
+	UINT8		activeYaw;
+	UINT8		flightMode;														// bit 7 1 --> FM present in bits 0,1 except 0xFF --> not present
+	// new fields go here:
+	UINT8		unused[4];
+} STRU_TELE_AS6X_GAIN;
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -1060,6 +1240,7 @@ typedef union
 	STRU_TELE_GPS_STAT		gpsstat;
 	STRU_TELE_GPS_BINARY	gpsbin;
 	STRU_TELE_AS3X_LEGACY	as3x;
+	STRU_TELE_AS6X_GAIN		as6x;
 	STRU_TELE_GYRO			gyro;
 	STRU_TELE_ALPHA6		alpha6;
 	STRU_TELE_ATTMAG		attMag;
@@ -1072,6 +1253,11 @@ typedef union
 	STRU_TELE_STRAIN		strain;
 	STRU_TELE_LIPOMON		lipomon;
 	STRU_TELE_LIPOMON_14	lipomon14;
+	STRU_SMARTBATT_HEADER	smartBatt_header;
+	STRU_SMARTBATT_REALTIME	smartBatt_realtime;
+	STRU_SMARTBATT_CELLS	smartBatt_cells;
+	STRU_SMARTBATT_ID		smartBatt_ID;
+	STRU_SMARTBATT_LIMITS	smartBatt_limits;
 	STRU_TELE_USER_16SU		user_16SU;
 	STRU_TELE_USER_16SU32U	user_16SU32U;
 	STRU_TELE_USER_16SU32S	user_16SU32S;
@@ -1081,6 +1267,7 @@ typedef union
 	STRU_TELE_V_SPEAK		vSpeak;
 	STRU_TELE_SMOKE_EL		smoke_el;
 	STRU_TELE_FLITECTRL		fControl;
+	STRU_TELE_TILT			tilt;
 	STRU_TELE_XF_QOS		xfire;
 } UN_TELEMETRY;																	// All telemetry messages
 
