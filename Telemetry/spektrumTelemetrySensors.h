@@ -288,7 +288,7 @@ typedef struct
 {
 	UINT8		identifier;														// Source device = 0x02
 	UINT8		sID;															// Secondary ID
-	INT16		temperature;													// Changed to signed 2010-01-06 per PB e-mail
+	INT16		temperature;													// Temperature in degrees Fahrenheit
 } STRU_TELE_TEMP;
 
 //////////////////////////////////////////////////////////////////////////////
@@ -448,7 +448,7 @@ typedef struct
 {
 	UINT8		identifier;														// Source device = 0x20
 	UINT8		sID;															// Secondary ID
-	UINT16		RPM;															// Electrical RPM, 10RPM (0-655340 RPM)      0xFFFF --> "No data"
+	UINT16		RPM;															// Electrical RPM, 10RPM (0-655340 RPM)  0xFFFF --> "No data"
 	UINT16		voltsInput;														// Volts, 0.01v (0-655.34V)       0xFFFF --> "No data"
 	UINT16		tempFET;														// Temperature, 0.1C (0-6553.4C)  0xFFFF --> "No data"
 	UINT16		currentMotor;													// Current, 10mA (0-655.34A)      0xFFFF --> "No data"
@@ -577,6 +577,7 @@ typedef struct
 
 #define	SMARTBATT_MSG_TYPE_MASK_BATTNUMBER		(0x0F)
 #define	SMARTBATT_MSG_TYPE_MASK_MSGTYPE			(0xF0)
+
 #define SMARTBATT_MSG_TYPE_REALTIME				(0x00)
 #define SMARTBATT_MSG_TYPE_CELLS_1_6			(0x10)
 #define SMARTBATT_MSG_TYPE_CELLS_7_12			(0x20)
@@ -596,7 +597,7 @@ typedef struct
 	UINT16		batteryCapacityUsage_mAh;										// Approximate battery capacity usage, in mAh (0xFFFF = unavailable)
 	UINT16		minCellVoltage_mV;												// Minimum cell voltage of pack, in mV
 	UINT16		maxCellVoltage_mV;												// Maximum cell voltage of pack, in mV
-	UINT8		rfu[2];									// TODO: Make this a Status field, maybe with error bits?
+	UINT8		rfu[2];
 } STRU_SMARTBATT_REALTIME;
 
 //...........................................................................
@@ -622,6 +623,9 @@ typedef struct
 	UINT8		manufacturer;													// 0:BattGo
 	UINT16		cycles;															// Number of charge/discharge cycles recorded (0 = unavailable)
 	UINT8		uniqueID[8];													// Unique battery ID, manufacturer-specific
+																				// 0: [0]   = lower (first) byte of "Customer ID"
+																				//    [1-3] = lower 3 bytes of "Special Mark of Battery"
+																				//    [4-7] = 4-byte "Manufacturing Date"
 } STRU_SMARTBATT_ID;
 
 //...........................................................................
@@ -631,7 +635,7 @@ typedef struct
 	UINT8		identifier;														// Source device = 0x42
 	UINT8		sID;															// Secondary ID
 	UINT8		typeChannel;													// Msg type = SMARTBATT_MSG_TYPE_LIMITS | Battery number (0 or 1)
-	UINT8		rfu;										 // TODO: What other battery limit could we put here? Maybe one that BattGo doesn't have, but future batteries might?
+	UINT8		rfu;
 	UINT16		fullCapacity_mAh;												// Fully charged battery capacity, in mAh
 	UINT16		dischargeCurrentRating;											// Rated discharge current, in 0.1C
 	UINT16		overDischarge_mV;												// Limit below which battery is likely damaged, in mV
@@ -1173,15 +1177,19 @@ typedef struct
 //
 //////////////////////////////////////////////////////////////////////////////
 //
+//	Uses big-endian byte order
+//
 typedef struct
 {
 	UINT8		identifier;														// Source device = 0x7E
 	UINT8		sID;															// Secondary ID
 	UINT16		microseconds;													// microseconds between pulse leading edges
-	UINT16		volts;															// Added per V3 spec 2010-01-06, 0.01V increments
-	INT16		temperature;													// Added per V3 spec 2010-01-06.  0x7FFF = "No Data"
-	INT8		dBm_A,															// Average signal for A antenna in dBm.
-				dBm_B;															// Average signal for B antenna in dBm.  If only 1 antenna, set B = A
+	UINT16		volts;															// 0.01V increments (typically flight pack voltage)
+	INT16		temperature;													// Temperature in degrees F.  0x7FFF = "No Data"
+	INT8		dBm_A,															// Avg RSSI in dBm (<-1 = dBm, 0 = no data, >0 = % range) -- (legacy)antenna A in dBm
+				dBm_B;															// Avg RSSI in % (<-1 = dBm, 0 = no data, >0 = % range)   -- (legacy)antenna B in dBm
+																				// Note: Legacy use as antenna A/B dBm values is still supported. If only 1 antenna, set B = A.
+																				//       The "no data" value is 0, but -1 (0xFF) is treated the same for backwards compatibility
 	UINT16		spare[2];
 } STRU_TELE_RPM;
 
@@ -1206,13 +1214,13 @@ typedef struct
 {
 	UINT8		identifier;														// Source device = 0x7F
 	UINT8		sID;															// Secondary ID
-	UINT16		A;
-	UINT16		B;
-	UINT16		L;
-	UINT16		R;
-	UINT16		F;
-	UINT16		H;
-	UINT16		rxVoltage;														// Volts, .01V
+	UINT16		A;																// Internal/base receiver fades. 0xFFFF = "No data"
+	UINT16		B;																// Remote receiver fades. 0xFFFF = "No data"
+	UINT16		L;																// Third receiver fades. 0xFFFF = "No data"
+	UINT16		R;																// Fourth receiver fades. 0xFFFF = "No data"
+	UINT16		F;																// Frame losses. 0xFFFF = "No data"
+	UINT16		H;																// Holds. 0xFFFF = "No data"
+	UINT16		rxVoltage;														// Volts, .01V increment. 0xFFFF = "No data"
 } STRU_TELE_QOS;
 
 //////////////////////////////////////////////////////////////////////////////
